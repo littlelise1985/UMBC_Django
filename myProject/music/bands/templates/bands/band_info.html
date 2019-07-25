@@ -1,0 +1,16 @@
+{% extends "bands/bands_base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        Band: {{ band.name }}
+    </div>
+    <div class="row">
+        Genre: {{ band.genre }}
+    </div>
+    {% for member in band.member.all %}
+    <div class="row">
+        {{ member.name }}
+    </div>
+    {% endfor %}
+</div>
+{% endblock content %}
