@@ -2,6 +2,7 @@ from django.db import models
 # these are the plain models that don't have the
 # extra code from chapter 9
 
+
 class Genre(models.Model):
     name = models.CharField(max_length=32)
 
@@ -18,7 +19,7 @@ class Member(models.Model):
 
 class Band(models.Model):
     name = models.CharField(max_length=32)
-    genre = models.ForeignKey(Genre)
+    genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     members = models.ManyToManyField(Member)
 
     def __str__(self):
